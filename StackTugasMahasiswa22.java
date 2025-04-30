@@ -54,10 +54,23 @@ public class StackTugasMahasiswa22 {
         }
     }
 
+    public Mahasiswa22 lihatTugasTerbawah() {
+        if (!isEmpty()) {
+            return stack[0]; 
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas di dasar stack.");
+            return null;
+        }
+    }
+
+    public int jumlahTugas() {
+        return top + 1;
+    }    
+
     public void print() {
-        for (int i = 0; i <= top; i++) {
-            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
-        }            
+        for (int i = top; i >= 0; i--) {
+            System.out.printf("%s\t%s\t%s\n", stack[i].nama, stack[i].nim, stack[i].kelas);
+        }               
             System.out.println("");
         }
     }
